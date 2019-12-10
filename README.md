@@ -5,5 +5,5 @@ On Top of that , it also includes :-
 Hooks
 Thunk
 Custom MiddleWare
-Context
+Context API
 ```
