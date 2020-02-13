@@ -7,6 +7,7 @@ export default function CustomMiddleware(){
                     name:"customer middleware name"
                 }
             })
+        // store.getState()
         return store.dispatch({
             type:"GET_DETAILS",
             payload:{
