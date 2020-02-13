@@ -1,18 +1,11 @@
 export default function CustomMiddleware(){
     return store=>next=>action=>{
-        if(action.type="GET_DETAILS" && true)
-            return next({
-                type:"GET_DETAILS",
-                payload:{
-                    name:"customer middleware name"
-                }
-            })
-        // store.getState()
-        return store.dispatch({
-            type:"GET_DETAILS",
-            payload:{
-                name:"Again IT will be dispatched so all middleware will be called"
-            }
-        });
+        
+        //so, action = {type:"GET_DETAILS",payload:"payload"}}
+        if(action.type="GET_DETAILS"){
+            return next({...action,{payload:"this is in customer middleware"}}})
+        }
+        let allState = store.getState();
+        return store.dispatch(action);
     }
 }
